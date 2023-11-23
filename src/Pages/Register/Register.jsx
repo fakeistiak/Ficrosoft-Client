@@ -43,7 +43,7 @@ const Register = () => {
             <div className="normal-case font-bold text-center text-white">
               <h1 className="lg:text-3xl md:2xl pl-4 sm:text-xl font-extrabold">
                 <span>
-                  Tasty<span className="text-orange-500">Bite</span>
+                  Ficro<span className="text-cyan-500">Soft</span>
                 </span>
               </h1>
             </div>
@@ -114,7 +114,7 @@ const Register = () => {
               <input
                 type="submit"
                 value="Sign Up"
-                className="btn w-full bg-orange-500 text-white hover:bg-orange-700"
+                className="btn w-full bg-cyan-500 text-white hover:bg-cyan-700"
               />
             </div>
           </form>

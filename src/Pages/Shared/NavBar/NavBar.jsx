@@ -88,7 +88,7 @@ const Navbar = () => {
               {isDropdownVisible && (
                 <button
                   onClick={handleLogOut}
-                  className="btn bg-cyan-500 hover:bg-cyan-700 text-white mt-2"
+                  className=" bg-cyan-500 text-white px-5 py-2 rounded-lg hover:bg-cyan-600 mt-2"
                 >
                   Log Out
                 </button>
@@ -97,7 +97,7 @@ const Navbar = () => {
 
             {!user ? (
               <Link to="/login">
-                <button className="bg-cyan-500 hover:bg-cyan-700 text-lg px-7 md:px-8 lg:px-6 text-center py-2 mt-3 font-medium text-white justify-center items-center cursor-pointer w-full block rounded-md">
+                <button className="bg-cyan-500 hover:bg-cyan-700 text-lg px-7 md:px-8 lg:px-5 text-center py-2 mt-3 font-medium text-white justify-center items-center cursor-pointer w-full block rounded-md">
                   Login
                 </button>
               </Link>

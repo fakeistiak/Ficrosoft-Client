@@ -59,7 +59,7 @@ const Login = () => {
               <div className="normal-case font-bold text-center text-white">
                 <h1 className="lg:text-3xl pl-4 md:text-2xl sm:text-xl font-extrabold">
                   <span>
-                    Tasty<span className="text-orange-500">Bite</span>
+                    Ficro<span className="text-cyan-500">Soft</span>
                   </span>
                 </h1>
               </div>
@@ -113,7 +113,7 @@ const Login = () => {
               </div>
 
               <div className="mt-6">
-                <button className="btn w-full bg-orange-500 text-white hover:bg-orange-700">
+                <button className="btn w-full bg-cyan-500 text-white hover:bg-cyan-700">
                   Sign Up
                 </button>
               </div>
