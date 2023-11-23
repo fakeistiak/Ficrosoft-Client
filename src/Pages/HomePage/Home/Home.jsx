@@ -1,3 +1,4 @@
+import Hero from "../../Hero/Hero";
 import Footer from "../../Shared/Footer/Footer";
 import NavBar from "../../Shared/NavBar/NavBar";
 import Banner from "../Banner/Banner";
@@ -9,6 +10,7 @@ const Home = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <Counter></Counter>
+            <Hero></Hero>
             <Footer></Footer>
         </div>
     );
