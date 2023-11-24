@@ -1,48 +1,56 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FaUser } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { CiBank } from "react-icons/ci";
 import { GiMoneyStack } from "react-icons/gi";
 import { MdDesignServices, MdInsertPhoto } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { useContext } from "react";
+import { RiLockPasswordFill, RiUserReceived2Line } from "react-icons/ri";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import { FaUserPen } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { uploadImage } from "../../utils/uploadImage";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
-  const navigate = useNavigate(); 
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
 
-    const form = new FormData(e.currentTarget);
-    const email = form.get("email");
-    const name = form.get("name");
-    const photoURL = form.get("photoURL");
-    const password = form.get("password");
-    console.log(email, password, name, photoURL);
+  const { register, handleSubmit } = useForm();
 
-
+  const onSubmit = (data) => {
+    const {
+      email,
+      password,
+      salary,
+      designation,
+      bank_account_no,
+      name,
+      image,
+    } = data;
     createUser(email, password)
-      .then((result) => {
-        updateUser({ name, photo }).then(
-          console.log(result.user),
-          toast.success("Sign up Successful"),
-          navigate("/"),
-
-          window.location.reload()
-        );
+      .then(async () => {
+        await uploadImage(image[0]).then((result) => {
+          console.log(result);
+          updateUser({
+            name,
+            photo: result.data.display_url,
+          }).then(() => {
+            toast.success("Registered Successfully");
+            navigate("/");
+          });
+        });
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
   return (
     <div>
       <section className="bg-gray-200">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form onSubmit={handleRegister} className="w-full max-w-md">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
             <div className="normal-case font-bold text-center text-white">
               <h1 className="lg:text-3xl md:2xl pl-4 sm:text-xl font-extrabold">
                 <span>
@@ -68,9 +76,24 @@ const Register = () => {
 
             <div className="relative flex items-center mt-8">
               <div className="absolute">
-                <FaUser className="w-6 h-6 mx-3 text-cyan-500"></FaUser>
+                <RiUserReceived2Line className="w-6 h-6 mx-3 text-cyan-500" />
+              </div>
+              <select
+                {...register("role")}
+                name="role"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
+              >
+                <option value="option1">Employee</option>
+                <option value="option2">HR</option>
+              </select>
+            </div>
+            <div className="relative flex items-center mt-4">
+              <div className="absolute">
+                <FaUserPen className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={"Istiak"}
+                {...register("name")}
                 type="text"
                 name="name"
                 className="block w-full py-3 bg-white border rounded-lg px-11"
@@ -82,6 +105,8 @@ const Register = () => {
                 <HiOutlineMail className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={"Istiak@gmai.com"}
+                {...register("email")}
                 type="email"
                 name="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
@@ -93,8 +118,10 @@ const Register = () => {
                 <CiBank className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={2323232}
+                {...register("bank_account_no")}
                 type="text"
-                name="bank"
+                name="bank_account_no"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
                 placeholder="Bank Account Number"
               />
@@ -104,6 +131,8 @@ const Register = () => {
                 <GiMoneyStack className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={32322323}
+                {...register("salary")}
                 type="text"
                 name="salary"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
@@ -115,6 +144,8 @@ const Register = () => {
                 <MdDesignServices className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={"Engineer"}
+                {...register("designation")}
                 type="text"
                 name="designation"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
@@ -126,8 +157,11 @@ const Register = () => {
                 <MdInsertPhoto className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                type="text"
-                name="photoURL"
+                {...register("image")}
+                type="file"
+                name="image"
+                required
+                accept="image/*"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
                 placeholder="Photo URL"
               />
@@ -138,6 +172,8 @@ const Register = () => {
                 <RiLockPasswordFill className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
+                defaultValue={123456}
+                {...register("password")}
                 type="password"
                 name="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg"

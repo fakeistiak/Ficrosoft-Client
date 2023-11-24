@@ -3,7 +3,9 @@ const Testimonials = () => {
     return (
       <section>
         <div className="max-w-6xl px-6 py-10 mx-auto">
-          <p className="text-5xl font-bold font-serif text-cyan-500 text-center">Testimonials</p>
+          <p className="text-5xl font-bold font-serif text-cyan-500 text-center">
+            Testimonials
+          </p>
 
           <h1 className="mt-2 text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
             What clients saying
@@ -15,14 +17,14 @@ const Testimonials = () => {
             <div className="w-full p-6 bg-cyan-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
               <img
                 className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
-                src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                src="https://i.ibb.co/n1QyXxp/brunette-business-woman-with-wavy-long-hair-blue-eyes-stands-holding-notebook-hands-1.jpg"
                 alt="client photo"
               />
 
               <div className="mt-2 md:mx-6">
                 <div>
                   <p className="text-xl font-medium tracking-tight text-white">
-                    Ema Watson
+                    Hande Ercel
                   </p>
                   <p className="text-cyan-200 ">Marketing Manager at Stech</p>
                 </div>

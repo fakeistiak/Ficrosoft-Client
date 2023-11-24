@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { CiMenuBurger } from "react-icons/ci";
 
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -30,13 +29,15 @@ const Navbar = () => {
     </>
   );
 
+
+  console.log(user)
   return (
     <>
-      <div className="navbar bg-black text-white max-w-screen fixed z-10 bg-opacity-30">
+      <div className="navbar bg-black text-white max-w-screen fixed z-50 bg-opacity-30">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <CiMenuBurger className="text-xl text-cyan-500"/>
+              <CiMenuBurger className="text-xl text-cyan-500" />
             </label>
             <ul
               tabIndex={0}
@@ -94,4 +95,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
