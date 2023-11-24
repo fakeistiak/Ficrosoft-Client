@@ -55,7 +55,7 @@ const Login = () => {
       <div>
         <section className="bg-gray-200">
           <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-            <form onSubmit={handleLogin} className="w-full max-w-md pt-20">
+            <form onSubmit={handleLogin} className="w-full max-w-md">
               <div className="normal-case font-bold text-center text-white">
                 <h1 className="lg:text-3xl pl-4 md:text-2xl sm:text-xl font-extrabold">
                   <span>
@@ -79,7 +79,7 @@ const Login = () => {
 
               <div className="relative flex items-center mt-6">
                 <div className="absolute">
-                  <HiOutlineMail className="w-6 h-6 mx-3" />
+                  <HiOutlineMail className="w-6 h-6 mx-3 text-cyan-500" />
                 </div>
                 <input
                   type="email"
@@ -91,7 +91,7 @@ const Login = () => {
 
               <div className="relative flex items-center mt-4">
                 <div className="absolute">
-                  <RiLockPasswordFill className="w-6 h-6 mx-3" />
+                  <RiLockPasswordFill className="w-6 h-6 mx-3 text-cyan-500" />
                 </div>
                 <input
                   type="password"
@@ -100,18 +100,6 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
-              <div className="relative flex-col items-center mt-4">
-                <input
-                  type="text"
-                  name="captcha"
-                  className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg"
-                  placeholder="type the captcha above..."
-                />
-                <button className="btn btn-outline btn-xs w-full mt-2 h-8 hover:bg-black hover:text-white">
-                  Validate
-                </button>
-              </div>
-
               <div className="mt-6">
                 <button className="btn w-full bg-cyan-500 text-white hover:bg-cyan-700">
                   Sign Up
