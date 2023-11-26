@@ -5,6 +5,8 @@ import Register from "../Pages/Register/Register";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Pages/HomePage/Home/Home";
 import Dashboard from "../Layout/Dashboard";
+import PaymentHistory from "../Pages/Dahsboard/PaymentHistory/PaymentHistory";
+import WorkSheet from "../Pages/Dahsboard/Worksheet/Worksheet";
 
 export const router = createBrowserRouter([
   {
@@ -32,8 +34,12 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "",
-        
+        path: "payHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path: "worksheet",
+        element: <WorkSheet></WorkSheet>
       }
     ]
   }
