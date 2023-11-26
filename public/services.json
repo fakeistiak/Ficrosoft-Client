@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Web Development",
+    "description": "Discover custom web development solutions tailored to your unique needs. Our team specializes in creating visually stunning and highly functional websites. With a portfolio of 50+ successful launches, we deliver outstanding work that is highly recommended for a variety of web projects. Get started on your digital journey with us.",
+    "image": "https://i.ibb.co/8M49FJ9/pexels-photomix-company-230544.jpg",
+    "successMetric": "Launched 50+ successful websites",
+    "testimonial": "Outstanding work! Highly recommended for web projects.",
+    "cta": "Get Started",
+    "location": "123 Main Street, Cityville, Country",
+    "email": "webdev@example.com"
+  },
+  {
+    "title": "Consulting Services",
+    "description": "Strategic consulting services designed to propel your business forward. Our expert consultants analyze market trends, identify growth opportunities, and develop tailored strategies for success. With a proven track record, we've consistently increased client revenue by 30%. Experience exceptional service that transforms businesses.",
+    "image": "https://i.ibb.co/DbLX3V2/sigmund-ps-XNym-QI7-Pk-unsplash.jpg",
+    "successMetric": "Increased client revenue by 30%",
+    "testimonial": "Exceptional service! Our business saw remarkable growth.",
+    "cta": "Learn More",
+    "location": "456 Business Avenue, Townsville, Country",
+    "email": "consulting@example.com"
+  },
+  {
+    "title": "Digital Marketing",
+    "description": "Experience comprehensive digital marketing strategies that drive online success. Our services generate a 200% increase in online leads, ensuring incredible results for your business. Clients rave about our ability to enhance online presence. See results that transform your digital landscape with our proven digital marketing expertise.",
+    "image": "https://i.ibb.co/t4Stzgs/adem-ay-Tk9m-HP4rg-Q-unsplash.jpg",
+    "successMetric": "Generated 200% increase in online leads",
+    "testimonial": "Incredible results! Our online presence has never been better.",
+    "cta": "See Results",
+    "location": "789 Marketing Lane, Marketing City, Country",
+    "email": "marketing@example.com"
+  },
+  {
+    "title": "Mobile App Development",
+    "description": "Embark on innovative and user-friendly mobile app development with our expert team. Our apps have been featured in the App Store's Top 10, showcasing our commitment to excellence. Clients praise our fantastic app development team for creating apps that users love. Explore the world of successful app development with us.",
+    "image": "https://i.ibb.co/J7cSJgV/representations-user-experience-interface-design-Copy.jpg",
+    "successMetric": "Featured in App Store's Top 10",
+    "testimonial": "Fantastic app development team! Our users love the app.",
+    "cta": "Explore Apps",
+    "location": "101 App Street, Appville, Country",
+    "email": "appdev@example.com"
+  },
+  {
+    "title": "E-commerce Solutions",
+    "description": "Build robust and scalable e-commerce platforms with our expert solutions. Our services have facilitated over $10 million in online sales, making us the go-to choice for transforming online storefronts. Clients praise our expertise in e-commerce, making us the ideal partner for starting or enhancing your online selling journey.",
+    "image": "https://i.ibb.co/HVtSGPL/pexels-cottonbro-studio-4709285-Copy.jpg",
+    "successMetric": "Facilitated over $10 million in online sales",
+    "testimonial": "E-commerce experts! Transformed our online storefront.",
+    "cta": "Start Selling",
+    "location": "555 E-commerce Street, Salesville, Country",
+    "email": "sales@example.com"
+  },
+  {
+    "title": "Data Analytics",
+    "description": "Harness the power of data for informed decision-making with our data analytics services. Our experts improve client ROI through data-driven insights, serving as data wizards that transform business strategies. Discover actionable insights that elevate your business to new heights with our comprehensive data analytics solutions.",
+    "image": "https://i.ibb.co/0h2zCXz/sebastiaan-stam-RCh-ZT-Jl-I9g-unsplash-Copy.jpg",
+    "successMetric": "Improved client ROI through data-driven insights",
+    "testimonial": "Data wizards! Transformed our business strategies.",
+    "cta": "Discover Insights",
+    "location": "999 Data Avenue, Analytica City, Country",
+    "email": "data@example.com"
+  },
+  {
+    "title": "Graphic Design",
+    "description": "Experience creative and visually appealing graphic design solutions that captivate audiences. Our designs have received industry awards, showcasing our commitment to artistic brilliance. Clients appreciate our ability to capture brand essence perfectly. Explore our portfolio and witness the transformative power of our graphic design expertise.",
+    "image": "https://i.ibb.co/S6nFYVL/caspar-camille-rubin-0qv-BNep1-Y04-unsplash-Copy.jpg",
+    "successMetric": "Received industry design awards",
+    "testimonial": "Artistic brilliance! Captured our brand essence perfectly.",
+    "cta": "See Portfolio",
+    "location": "777 Design Street, Artville, Country",
+    "email": "design@example.com"
+  },
+  {
+    "title": "Cloud Computing",
+    "description": "Optimize your business with efficient and secure cloud solutions. Our services have streamlined operations for 100+ clients, making us a reliable choice for enhancing business scalability. Clients appreciate our commitment to providing cloud services that ensure operational efficiency. Get cloud-ready with our expert cloud computing solutions.",
+    "image": "https://i.ibb.co/x2hKxpD/data-analysis-marketing-business-report-concept.jpg",
+    "successMetric": "Streamlined operations for 100+ clients",
+    "testimonial": "Reliable cloud services! Enhanced our business scalability.",
+    "cta": "Get Cloud Ready",
+    "location": "888 Cloud Street, Cloudsville, Country",
+    "email": "cloud@example.com"
+  }, 
+  {
+    "title": "Developing",
+    "description": "Embark on innovative and user-friendly mobile app development with our expert team. Our apps have been featured in the App Store's Top 10, showcasing our commitment to excellence. Clients praise our fantastic app development team for creating apps that users love. Explore the world of successful app development with us.",
+    "image": "https://i.ibb.co/mtXTKYG/kenny-eliason-I6w-CDYW6ij8-unsplash.jpg",
+    "successMetric": "Featured in App Store's Top 10",
+    "testimonial": "Fantastic app development team! Our users love the app.",
+    "cta": "Explore Apps",
+    "location": "101 App Street, Appville, Country",
+    "email": "appdev@example.com"
+  }
+]
