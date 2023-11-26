@@ -11,7 +11,7 @@ const EmployeeProfile = () => {
         <div className="pb-6 font-serif border-b-2">
           <div className="items-center flex justify-center">
             <img
-              className="w-40 pb-2 h-40 rounded-full object-cover shadow-2xl shadow-purple-500"
+              className="w-40 pb-2 h-40 rounded-full object-cover shadow-2xl"
               src={user?.photoURL}
               alt=""
             />
