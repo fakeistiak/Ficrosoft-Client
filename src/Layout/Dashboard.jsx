@@ -3,8 +3,10 @@ import { LuFileSpreadsheet } from "react-icons/lu";
 import { MdOutlinePayment } from 'react-icons/md';
 import EmployeeProfile from '../Pages/Dahsboard/EmployeeProfile/EmployeeProfile';
 import { FaHouse } from 'react-icons/fa6';
+import useWorksheet from '../hooks/useWorksheet';
 
 const Dashboard = () => {
+ const [worksheet] = useWorksheet();
     return (
       <div className="flex text-white">
         <div className="mx-auto w-84 min-h-screen bg-cyan-700 flex pt-12">
@@ -17,7 +19,7 @@ const Dashboard = () => {
             </li>
             <li className="text-xl">
               <NavLink to="/dashboard/worksheet">
-                <LuFileSpreadsheet /> WorkSheet
+                <LuFileSpreadsheet /> WorkSheet: {worksheet.length}
               </NavLink>
             </li>
             <li className='text-xl'>

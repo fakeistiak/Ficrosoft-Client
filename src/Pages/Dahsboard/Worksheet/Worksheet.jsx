@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import WorksheetTable from "./WorksheetTable";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure"
+import useWorksheet from "../../../hooks/useWorksheet";
 
 const Worksheet = () => {
   const { user } = useContext(AuthContext);
   const [selectedDate, setSelectedDate] = useState(null);
-
+    const axiosSecure = useAxiosSecure()
+    const [, refetch] = useWorksheet();
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -13,7 +17,7 @@ const Worksheet = () => {
     const name = form.name.value;
     const tasks = form.tasks.value;
     const hoursWorked = form.hoursWorked.value;
-    const date = selectedDate; // Use the selectedDate from the state
+    const date = selectedDate;
     const order = {
       employeeName: name,
       date,
@@ -23,16 +27,29 @@ const Worksheet = () => {
 
     console.log(order);
 
-    fetch("http://localhost:5000/worksheet", {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(order)
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+    axiosSecure.post("/worksheet", order, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Worksheet submitted successfully.",
+        });
+          refetch();
+        form.reset();
+        setSelectedDate(null);
+      })
+      .catch((error) => {
+        console.error("Error submitting worksheet:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "An error occurred while submitting the worksheet.",
+        });
       });
   };
 
@@ -40,10 +57,10 @@ const Worksheet = () => {
     setSelectedDate(date);
   };
   return (
-    <div className="my-12">
-      <section className="max-w-4xl p-6 mx-auto bg-base-200 rounded-md shadow-md text-black">
-        <h2 className="lg:text-2xl font-semibold  capitalize text-center">
-          Work-Sheet
+    <div className="my-4">
+      <section className="max-w-4xl p-6 mx-auto bg-base-100 rounded-md shadow-md text-black">
+        <h2 className="lg:text-2xl font-bold  capitalize text-center">
+          Work-Sheet Form
         </h2>
 
         <form onSubmit={handleSubmit}>

@@ -118,7 +118,7 @@ const Register = () => {
                 <CiBank className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={2323232}
+                defaultValue={42424242}
                 {...register("bank_account_no")}
                 type="text"
                 name="bank_account_no"
@@ -131,7 +131,7 @@ const Register = () => {
                 <GiMoneyStack className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={32322323}
+                defaultValue={300000}
                 {...register("salary")}
                 type="text"
                 name="salary"
