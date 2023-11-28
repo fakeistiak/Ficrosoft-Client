@@ -1,0 +1,7 @@
+[
+  { "month": "January 2023", "amount": 5000, "transactionId": "ABC123" },
+  { "month": "December 2022", "amount": 5500, "transactionId": "DEF456" },
+  { "month": "November 2022", "amount": 5200, "transactionId": "GHI789" },
+  { "month": "October 2022", "amount": 4800, "transactionId": "JKL012" },
+  { "month": "September 2022", "amount": 5100, "transactionId": "MNO345" }
+]
