@@ -80,7 +80,7 @@ const AllEmployee = () => {
           <table className="table w-full">
             {/* head */}
             <thead>
-              <tr className="text-lg text-white bg-black">
+              <tr className="text-lg text-white bg-cyan-400">
                 <th>#</th>
                 <th>Name</th>
                 <th>Designation</th>
@@ -88,7 +88,7 @@ const AllEmployee = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody className="bg-teal-400">
+            <tbody className="bg-black">
               {users.map((user, index) => (
                 <tr key={user._id}>
                   <th>{index + 1}</th>
@@ -102,7 +102,7 @@ const AllEmployee = () => {
                     ) : (
                       <button
                         onClick={() => handleChangeRole(user)}
-                        className="px-4 py-1 rounded-md bg-green-500 hover:bg-green-700 text-white font-semibold text-lg"
+                        className="px-4 py-1 rounded-md bg-cyan-500 hover:bg-cyan-700 text-white font-semibold text-lg"
                       >
                         {user.role}
                       </button>
