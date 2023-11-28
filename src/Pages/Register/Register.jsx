@@ -4,15 +4,17 @@ import { CiBank } from "react-icons/ci";
 import { GiMoneyStack } from "react-icons/gi";
 import { MdDesignServices, MdInsertPhoto } from "react-icons/md";
 import { RiLockPasswordFill, RiUserReceived2Line } from "react-icons/ri";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaUserPen } from "react-icons/fa6";
-import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { uploadImage } from "../../utils/uploadImage";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
 
   const navigate = useNavigate();
 
@@ -36,8 +38,24 @@ const Register = () => {
             name,
             photo: result.data.display_url,
           }).then(() => {
-            toast.success("Registered Successfully");
-            navigate("/");
+            const userInfo = {
+              name: name,
+              email: data.email,
+              salary: data.salary,
+              designation: data.designation,
+              bank_account_no: data.bank_account_no,
+              image: data.image,
+              role: data.role
+            };
+            axiosPublic.post('/users', userInfo)
+              .then(res => {
+                if (res.data.insertedId) {
+                  console.log('user added to database')
+                Swal.fire("Login Successful", "EXPLORE THE PAGE", "success");
+                navigate("/");
+              }
+            })
+            
           });
         });
       })
@@ -83,8 +101,8 @@ const Register = () => {
                 name="role"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
               >
-                <option value="option1">Employee</option>
-                <option value="option2">HR</option>
+                <option value="Employee">Employee</option>
+                <option value="HR">HR</option>
               </select>
             </div>
             <div className="relative flex items-center mt-4">

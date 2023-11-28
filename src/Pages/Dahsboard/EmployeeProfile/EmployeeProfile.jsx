@@ -16,20 +16,20 @@ const EmployeeProfile = () => {
               alt=""
             />
           </div>
-          <div className="text-lg items-center gap-1 py-2 flex pb-2">
+          <div className="lg:text-lg md:text-md items-center gap-1 py-2 flex pb-2">
             <FaUser className="text-lg" />
             Name: {user?.displayName}
           </div>
-          <div className="text-lg items-center flex gap-1 pb-2">
+          <div className="lg:text-lg md:text-md items-center flex gap-1 pb-2">
             <MdOutlineEmail className="text-xl" />
             Email: {user?.email}
           </div>
-          <div className="text-lg items-center flex gap-1">
+          <div className="lg:text-lg md:text-md items-center flex gap-1">
             <LuChevronLast className="text-xl" />
             Last-Login: {user?.metadata.lastSignInTime}
           </div>
         </div>
-            <button className="text-2xl flex items-center gap-1 py-4">
+            <button className="lg:text-2xl md:text-xl flex items-center gap-1 py-4">
           <FiSettings></FiSettings>Settings
         </button>
       </div>

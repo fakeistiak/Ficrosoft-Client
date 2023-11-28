@@ -9,20 +9,20 @@ const Dashboard = () => {
  const [worksheet] = useWorksheet();
     return (
       <div className="flex text-white">
-        <div className="mx-auto w-84 min-h-screen bg-cyan-700 flex pt-12">
+        <div className="mx-auto lg:w-84 min-h-screen bg-cyan-700 flex pt-12">
           <ul className="menu p-4">
             <EmployeeProfile></EmployeeProfile>
-            <li className="text-xl">
+            <li className="lg:text-xl md:text-md sm:text-sm">
               <NavLink to="/">
                 <FaHouse /> User Home
               </NavLink>
             </li>
-            <li className="text-xl">
+            <li className="lg:text-xl md:text-md sm:text-sm">
               <NavLink to="/dashboard/worksheet">
                 <LuFileSpreadsheet /> WorkSheet: {worksheet.length}
               </NavLink>
             </li>
-            <li className='text-xl'>
+            <li className="lg:text-xl md:text-md sm:text-sm">
               <NavLink to="/dashboard/payHistory">
                 <MdOutlinePayment></MdOutlinePayment> Payment History
               </NavLink>
