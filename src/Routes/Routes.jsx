@@ -7,7 +7,8 @@ import Home from "../Pages/HomePage/Home/Home";
 import Dashboard from "../Layout/Dashboard";
 import PaymentHistory from "../Pages/Dahsboard/PaymentHistory/PaymentHistory";
 import WorkSheet from "../Pages/Dahsboard/Worksheet/Worksheet";
-
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AllEmployee from "../Pages/Dahsboard/AllEmployee";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,11 +27,15 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-    ]
+    ],
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -39,8 +44,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "worksheet",
-        element: <WorkSheet></WorkSheet>
+        element: <WorkSheet></WorkSheet>,
+      },
+      {
+        path: "allemployee",
+        element: <AllEmployee></AllEmployee>
       }
-    ]
-  }
+    ],
+  },
 ]);
