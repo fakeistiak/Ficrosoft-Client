@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Naimur Reza",
+    "role": "Lead Developer",
+    "imageSrc": "https://i.ibb.co/tL9GbNr/anik.jpg",
+    "linkedIn": "https://www.linkedin.com/johndoe",
+    "twitter": "https://twitter.com/johndoe"
+  },
+  {
+    "name": "Tanvir Ahmed",
+    "role": "CEO",
+    "imageSrc": "https://i.ibb.co/GppQkPY/tanvir.jpg",
+    "linkedIn": "https://www.linkedin.com/janesmith",
+    "twitter": "https://twitter.com/janesmith"
+  },
+  {
+    "name": "Istiak Ahmed",
+    "role": "CTO",
+    "imageSrc": "https://i.ibb.co/WpHvsfh/istiak.jpg",
+    "linkedIn": "https://www.linkedin.com/michaeljohnson",
+    "twitter": "https://twitter.com/michaeljohnson"
+  },
+  {
+    "name": "Ahadul Islam",
+    "role": "Full Stack Developer",
+    "imageSrc": "https://i.ibb.co/ZVh7M1Q/387501024-1007987763739101-7675142294012035243-n.jpg",
+    "linkedIn": "https://www.linkedin.com/emilydavis",
+    "twitter": "https://twitter.com/emilydavis"
+  },
+
+  {
+    "name": "David Lee",
+    "role": "Design Director",
+    "imageSrc": "https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+    "linkedIn": "https://www.linkedin.com/davidlee",
+    "twitter": "https://twitter.com/davidlee"
+  },
+  {
+    "name": "Sarah Brown",
+    "role": "Content Writer",
+    "imageSrc": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+    "linkedIn": "https://www.linkedin.com/sarahbrown",
+    "twitter": "https://twitter.com/sarahbrown"
+  },
+  {
+    "name": "Kayum Shihab",
+    "role": "Products Managers",
+    "imageSrc": "https://i.ibb.co/J5Shyw4/shihab.jpg",
+    "linkedIn": "https://www.linkedin.com/robertwilson",
+    "twitter": "https://twitter.com/robertwilson"
+  },
+  {
+    "name": "Olivia Taylor",
+    "role": "Software Engineer",
+    "imageSrc": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+    "linkedIn": "https://www.linkedin.com/oliviataylor",
+    "twitter": "https://twitter.com/oliviataylor"
+  },
+  {
+    "name": "Daniel Anderson",
+    "role": "Graphic Designer",
+    "imageSrc": "https://images.unsplash.com/photo-1521488741203-dcc320950ce5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "linkedIn": "https://www.linkedin.com/danielanderson",
+    "twitter": "https://twitter.com/danielanderson"
+  }
+]

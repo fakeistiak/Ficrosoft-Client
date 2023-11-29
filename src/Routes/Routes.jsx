@@ -9,6 +9,8 @@ import PaymentHistory from "../Pages/Dahsboard/PaymentHistory/PaymentHistory";
 import WorkSheet from "../Pages/Dahsboard/Worksheet/Worksheet";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AllEmployee from "../Pages/Dahsboard/AllEmployee";
+import Team from "../Pages/Team/Team";
+import AllEmployeeForHR from "../Pages/Dahsboard/AllEmployeeForHR/AllEmployeeForHR";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/contact",
+        element: <Team></Team>,
       },
     ],
   },
@@ -48,8 +54,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "allemployee",
-        element: <AllEmployee></AllEmployee>
-      }
+        element: <AllEmployee></AllEmployee>,
+      },
+      {
+        path: "allemployeeHR",
+        element: <AllEmployeeForHR></AllEmployeeForHR>,
+      },
     ],
   },
 ]);

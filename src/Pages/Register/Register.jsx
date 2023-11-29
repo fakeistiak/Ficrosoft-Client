@@ -4,7 +4,7 @@ import { CiBank } from "react-icons/ci";
 import { GiMoneyStack } from "react-icons/gi";
 import { MdDesignServices, MdInsertPhoto } from "react-icons/md";
 import { RiLockPasswordFill, RiUserReceived2Line } from "react-icons/ri";
-import { useContext} from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaUserPen } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
@@ -45,17 +45,16 @@ const Register = () => {
               designation: data.designation,
               bank_account_no: data.bank_account_no,
               image: data.image,
-              role: data.role
+              isVerified: false,
+              role: data.role,
             };
-            axiosPublic.post('/users', userInfo)
-              .then(res => {
-                if (res.data.insertedId) {
-                  console.log('user added to database')
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                console.log("user added to database");
                 Swal.fire("Login Successful", "EXPLORE THE PAGE", "success");
                 navigate("/");
               }
-            })
-            
+            });
           });
         });
       })
@@ -123,7 +122,7 @@ const Register = () => {
                 <HiOutlineMail className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={"Istiak@gmai.com"}
+                defaultValue={"istiak@gmail.com"}
                 {...register("email")}
                 type="email"
                 name="email"

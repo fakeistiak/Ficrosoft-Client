@@ -1,17 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useRole from "../../hooks/useRole";
 
 const AllEmployee = () => {
+  const role = useRole();
+  console.log(role);
+
   const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users");
+      const res = await axiosSecure.get("/user", {
+        headers: {
+          Authorization: `Bearer${localStorage.getItem("access-token")}`,
+        },
+      });
       return res.data;
     },
   });
-
   const handleFireUser = (user) => {
     Swal.fire({
       title: "Are you sure?",
@@ -20,15 +27,15 @@ const AllEmployee = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Fired it!",
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/users/${user._id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
+              title: "Fired!",
+              text: "Your user has been Fired.",
               icon: "success",
             });
           }
@@ -37,33 +44,32 @@ const AllEmployee = () => {
     });
   };
 
- const handleChangeRole = (user) => {
-   // Show a SweetAlert confirmation dialog
-   Swal.fire({
-     title: `Are you sure you want to make ${user.name} HR?`,
-     icon: "warning",
-     showCancelButton: true,
-     confirmButtonColor: "#3085d6",
-     cancelButtonColor: "#d33",
-     confirmButtonText: "Yes",
-   }).then((result) => {
-     if (result.isConfirmed) {
-       axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
-         console.log(res.data);
-         if (res.data.modifiedCount > 0) {
-           refetch();
-           Swal.fire({
-             position: "center",
-             icon: "success",
-             title: `${user.name} is HR now`,
-             showConfirmButton: false,
-             timer: 1500,
-           });
-         }
-       });
-     }
-   });
- };
+  const handleChangeRole = (user) => {
+    Swal.fire({
+      title: `Are you sure you want to make ${user.name} HR?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
+          console.log(res.data);
+          if (res.data.modifiedCount > 0) {
+            refetch();
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: `${user.name} is HR now`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      }
+    });
+  };
 
   return (
     <div>
