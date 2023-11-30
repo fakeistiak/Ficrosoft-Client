@@ -84,6 +84,10 @@ const AllEmployeeForHR = () => {
 
 const handlePay = async (e) => {
   e.preventDefault();
+  if (!paymentDetails.month || !paymentDetails.year) {
+    Swal.fire("Error", "Please fill in all payment details", "error");
+    return;
+  }
 
   Swal.fire({
     title: "Are you sure?",
@@ -99,13 +103,13 @@ const handlePay = async (e) => {
         title: "Congratulations",
         text: `You have paid ${user.displayName} successfully`,
         icon: "success",
-        timer: 2000
-      })
+        timer: 2000,
+      });
       closePayModal();
-      
     }
   });
 };
+
 
 
   return (
@@ -225,7 +229,6 @@ const handlePay = async (e) => {
                   className="block w-full py-2 text-gray-700 bg-white border rounded-lg px-4"
                   type="text"
                   placeholder="2023"
-                  value={paymentDetails.year || "2023"}
                   onChange={(e) =>
                     setPaymentDetails({
                       ...paymentDetails,
@@ -238,7 +241,12 @@ const handlePay = async (e) => {
 
             <button
               type="submit"
-              className="px-4 py-2 mt-4 w-full rounded-lg bg-rose-500 hover:bg-rose-600 text-white"
+              className={`px-4 py-2 mt-4 w-full rounded-lg ${
+                !paymentDetails.month || !paymentDetails.year
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-rose-500 hover:bg-rose-600"
+              } text-white`}
+              disabled={!paymentDetails.month || !paymentDetails.year}
             >
               Pay: ({selectedEmployee?.salary})
             </button>

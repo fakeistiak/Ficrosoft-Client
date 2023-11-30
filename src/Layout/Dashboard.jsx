@@ -8,7 +8,6 @@ import useRole from "../hooks/useRole";
 
 const Dashboard = () => {
   const [worksheet] = useWorksheet();
-  // to-do
   const role = useRole();
 
   return (

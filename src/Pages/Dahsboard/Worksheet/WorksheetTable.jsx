@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import useWorksheet from "../../../hooks/useWorksheet";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const WorksheetTable = () => {
-    const [worksheet] = useWorksheet();
+  const [worksheet] = useWorksheet();
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <div className="mt-8">
@@ -12,6 +15,7 @@ const WorksheetTable = () => {
           <thead>
             <tr className="text-lg text-white bg-gray-800">
               <th>#</th>
+              <th>Name</th>
               <th>Tasks</th>
               <th>Hours Worked</th>
               <th>Date</th>
@@ -21,6 +25,9 @@ const WorksheetTable = () => {
             {worksheet.map((item, index) => (
               <tr key={item._id} className="bg-green-300 text-black">
                 <th>{index + 1}</th>
+                <td className="lg:text-md sm:text-sm font-semibold">
+                  {user?.displayName}
+                </td>
                 <td className="lg:text-md sm:text-sm font-semibold">
                   {item.tasks}
                 </td>

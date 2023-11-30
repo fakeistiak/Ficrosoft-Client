@@ -37,6 +37,7 @@ const AllEmployee = () => {
               title: "Fired!",
               text: "Your user has been Fired.",
               icon: "success",
+              timer:2000
             });
           }
         });

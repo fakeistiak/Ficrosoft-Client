@@ -66,11 +66,11 @@ const Worksheet = () => {
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
-              <label>Hours Worked</label>
+              <label>Name</label>
               <input
                 defaultValue={user?.displayName}
                 name="name"
-                placeholder="Hours Worked"
+                placeholder="Name"
                 className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md  dark:border-gray-600 focus:border-cyan-400 focus:ring-cyan-300 focus:ring-opacity-40 dark:focus:border-cyan-300 focus:outline-none focus:ring"
               />
             </div>
