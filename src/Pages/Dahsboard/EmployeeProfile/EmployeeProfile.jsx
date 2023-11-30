@@ -8,7 +8,7 @@ import useRole from "../../../hooks/useRole";
 
 const EmployeeProfile = () => {
   const { user } = React.useContext(AuthContext);
-  const role = useRole(); 
+  const role = useRole();
 
   return (
     <div>
@@ -25,7 +25,7 @@ const EmployeeProfile = () => {
           Name: {user?.displayName}
         </div>
         <div className="lg:text-lg md:text-md items-center flex gap-1 pb-2">
-          {role && (
+          {
             <>
               <div className="lg:text-lg md:text-md items-center flex gap-1 pb-2">
                 <FaUserCheck className="text-xl" />
@@ -33,7 +33,7 @@ const EmployeeProfile = () => {
               </div>
               <br />
             </>
-          )}
+          }
         </div>
         <div className="lg:text-lg md:text-md items-center flex gap-1 pb-2">
           <MdOutlineEmail className="text-xl" />

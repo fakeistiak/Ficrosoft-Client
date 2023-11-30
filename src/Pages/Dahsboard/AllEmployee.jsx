@@ -1,12 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import useRole from "../../hooks/useRole";
 
 const AllEmployee = () => {
-  const role = useRole();
-  console.log(role);
-
   const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -37,7 +33,7 @@ const AllEmployee = () => {
               title: "Fired!",
               text: "Your user has been Fired.",
               icon: "success",
-              timer:2000
+              timer: 2000,
             });
           }
         });
