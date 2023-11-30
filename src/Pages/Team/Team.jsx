@@ -13,10 +13,9 @@ const Team = () => {
 
   return (
     <>
-          <div className="px-20 bg-gray-900 pt-20">
-              <ContactUs></ContactUs>
-        <h1 className="text-5xl font-bold mb-4 text-center text-white pt-8 pb-8">
-          <span className="text-cyan-500">Executive</span> Team
+      <div className="px-4  pt-20">
+        <ContactUs></ContactUs>
+        <h1 className="text-5xl font-bold mb-4 text-center text-cyan-500 pt-8 pb-8">Executive Team
         </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
           {executives.map((executive, index) => (

@@ -34,12 +34,7 @@ const Dashboard = () => {
             <>
               <li className="lg:text-xl md:text-md sm:text-sm">
                 <NavLink to="/dashboard/allemployeeHR">
-                  <LuFileSpreadsheet /> All Employee: 
-                </NavLink>
-              </li>
-              <li className="lg:text-xl md:text-md sm:text-sm">
-                <NavLink to="/dashboard/worksheet">
-                  <LuFileSpreadsheet /> HR WorkSheet: {worksheet.length}
+                  <LuFileSpreadsheet /> All Employee
                 </NavLink>
               </li>
             </>
