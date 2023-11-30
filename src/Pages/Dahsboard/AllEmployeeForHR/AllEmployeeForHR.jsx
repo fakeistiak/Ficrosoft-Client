@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const AllEmployeeForHR = () => {
-   const { user } = React.useContext(AuthContext);
+  const { user } = React.useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [payModalOpen, setPayModalOpen] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
@@ -28,7 +28,7 @@ const AllEmployeeForHR = () => {
     queryFn: async () => {
       const res = await axiosSecure.get("/employee", {
         headers: {
-          Authorization: `Bearer${localStorage.getItem("access-token")}`,
+          Authorization: `Bearer ${localStorage.getItem("access-token")}`,
         },
       });
       return res.data;
@@ -82,15 +82,31 @@ const AllEmployeeForHR = () => {
     });
   };
 
-  const handlePay = () => {
-    // Perform the payment process using the selectedEmployee and paymentDetails
-    // You can use axios or any other method to send a payment request to the server
-    // After successful payment, you can show a success message and update the UI as needed
-    // ...
+const handlePay = async (e) => {
+  e.preventDefault();
 
-    // Close the pay modal after successful payment
-    closePayModal();
-  };
+  Swal.fire({
+    title: "Are you sure?",
+    text: "Once paid, you cannot undo this action!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, pay it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Congratulations",
+        text: `You have paid ${user.displayName} successfully`,
+        icon: "success",
+        timer: 2000
+      })
+      closePayModal();
+      
+    }
+  });
+};
+
 
   return (
     <div>
@@ -149,7 +165,7 @@ const AllEmployeeForHR = () => {
                     } text-white`}
                     disabled={!employee.isVerified}
                   >
-                    Pay
+                    {employee.isPaid ? "Paid ✅" : "Pay"}
                   </button>
                 </td>
               </tr>
@@ -160,72 +176,74 @@ const AllEmployeeForHR = () => {
 
       {/* Pay Modal */}
       <Modal open={payModalOpen} onClose={closePayModal} center>
-        <div>
-          <div className="flex justify-between">
-            <div>
-              <h2 className="text-xl font-bold mb-4">Pay Employee</h2>
-              <img
-                className="w-60 h-60 object-cover rounded-lg"
-                src={user?.photoURL}
-                alt=""
-              />
+        <form onSubmit={handlePay}>
+          <div>
+            <div className="flex justify-between">
+              <div>
+                <h2 className="text-xl font-bold mb-4">Pay Employee</h2>
+                <img
+                  className="w-60 h-60 object-cover rounded-lg"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <div className="pt-12 pl-20 flex-col justify-between">
+                <p className="text-xl font-semibold">
+                  Employee: {selectedEmployee?.name}
+                </p>
+                <p className="text-xl font-semibold pb-8">
+                  Salary: {selectedEmployee?.salary}
+                </p>
+                <select
+                  required
+                  className="block w-full py-2 text-gray-700 bg-white border rounded-lg px-4 my-2"
+                  value={paymentDetails.month}
+                  onChange={(e) =>
+                    setPaymentDetails({
+                      ...paymentDetails,
+                      month: e.target.value,
+                    })
+                  }
+                >
+                  <option value="" disabled>
+                    Select a month
+                  </option>
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+                <input
+                  className="block w-full py-2 text-gray-700 bg-white border rounded-lg px-4"
+                  type="text"
+                  placeholder="2023"
+                  value={paymentDetails.year || "2023"}
+                  onChange={(e) =>
+                    setPaymentDetails({
+                      ...paymentDetails,
+                      year: e.target.value,
+                    })
+                  }
+                />
+              </div>
             </div>
-            <div className="pt-12 pl-20 flex-col justify-between">
-              <p className="text-xl font-semibold">
-                Employee: {selectedEmployee?.name}
-              </p>
-              <p className="text-xl font-semibold pb-8">
-                Salary: {selectedEmployee?.salary}
-              </p>
-              <select
-                required
-                className="block w-full py-2 text-gray-700 bg-white border rounded-lg px-4 my-2"
-                value={paymentDetails.month}
-                onChange={(e) =>
-                  setPaymentDetails({
-                    ...paymentDetails,
-                    month: e.target.value,
-                  })
-                }
-              >
-                <option value="" disabled>
-                  Select a month
-                </option>
-                {/* <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option> */}
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <input
-                className="block w-full py-2 text-gray-700 bg-white border rounded-lg px-4"
-                type="text"
-                placeholder="Year"
-                value={paymentDetails.year || "2023"}
-                onChange={(e) =>
-                  setPaymentDetails({
-                    ...paymentDetails,
-                    year: e.target.value,
-                  })
-                }
-              />
-            </div>
-          </div>
 
-          <button
-            onClick={handlePay}
-            className="px-4 py-2 mt-4 w-full rounded-lg bg-rose-500 hover:bg-rose-600 text-white"
-          >
-            Pay: ({selectedEmployee?.salary})
-          </button>
-        </div>
+            <button
+              type="submit"
+              className="px-4 py-2 mt-4 w-full rounded-lg bg-rose-500 hover:bg-rose-600 text-white"
+            >
+              Pay: ({selectedEmployee?.salary})
+            </button>
+          </div>
+        </form>
       </Modal>
     </div>
   );
