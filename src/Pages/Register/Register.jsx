@@ -109,7 +109,6 @@ const Register = () => {
                 <FaUserPen className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={"Istiak"}
                 {...register("name")}
                 type="text"
                 name="name"
@@ -122,7 +121,6 @@ const Register = () => {
                 <HiOutlineMail className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={"istiak@gmail.com"}
                 {...register("email")}
                 type="email"
                 name="email"
@@ -135,7 +133,6 @@ const Register = () => {
                 <CiBank className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={42424242}
                 {...register("bank_account_no")}
                 type="text"
                 name="bank_account_no"
@@ -148,7 +145,6 @@ const Register = () => {
                 <GiMoneyStack className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={300000}
                 {...register("salary")}
                 type="text"
                 name="salary"
@@ -161,7 +157,6 @@ const Register = () => {
                 <MdDesignServices className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={"Engineer"}
                 {...register("designation")}
                 type="text"
                 name="designation"
@@ -189,7 +184,6 @@ const Register = () => {
                 <RiLockPasswordFill className="w-6 h-6 mx-3 text-cyan-500" />
               </div>
               <input
-                defaultValue={123456}
                 {...register("password")}
                 type="password"
                 name="password"

@@ -21,7 +21,7 @@ const Dashboard = () => {
               Home
             </NavLink>
           </li>
-          {role === "Admin" ? (
+          {role && role === "Admin" ? (
             <>
               <li className="lg:text-xl md:text-md sm:text-sm">
                 <NavLink to="/dashboard/allemployee">

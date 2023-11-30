@@ -6,8 +6,9 @@ const useRole = () => {
   const { user } = useContext(AuthContext);
   const [role, setRole] = useState(null);
   const axiosSecure = useAxiosSecure();
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     if (user?.email) {
       axiosSecure
         .get(`/user?email=${user?.email}`, {
@@ -17,6 +18,7 @@ const useRole = () => {
         })
         .then((res) => {
           setRole(res?.data?.role);
+          setLoading(false);
         });
     }
   }, [axiosSecure, user?.email]);
